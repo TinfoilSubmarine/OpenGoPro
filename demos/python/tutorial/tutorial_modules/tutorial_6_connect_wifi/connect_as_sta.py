@@ -9,6 +9,10 @@ from typing import Generator, Final
 from bleak import BleakClient
 from tutorial_modules import GoProUuid, connect_ble, proto, logger, ResponseManager
 
+def print_packet(packet):
+    packet_bytes = ':'.join('{:02x}'.format(x) for x in packet)
+    print(f"packet = {packet}")
+    print(f"packet_bytes = {packet_bytes}")
 
 def yield_fragmented_packets(payload: bytes) -> Generator[bytes, None, None]:
     """Generate fragmented packets from a monolithic payload to accommodate the max BLE packet size of 20 bytes.
@@ -61,6 +65,9 @@ async def fragment_and_write_gatt_char(client: BleakClient, char_specifier: str,
         data (bytes): data to fragment and write.
     """
     for packet in yield_fragmented_packets(data):
+        print("FRAGMENTED PACKETS START")
+        print_packet(packet)
+        print("FRAGMENTED PACKETS END")
         await client.write_gatt_char(char_specifier, packet, response=True)
 
 
@@ -89,6 +96,9 @@ async def scan_for_networks(manager: ResponseManager) -> int:
 
     # Send the scan request
     logger.debug(f"Writing: {start_scan_request.hex(':')}")
+    print("START SCAN REQUEST START")
+    print_packet(start_scan_request)
+    print("START SCAN REQUEST END")
     await manager.client.write_gatt_char(GoProUuid.NETWORK_MANAGEMENT_REQ_UUID.value, start_scan_request, response=True)
     while response := await manager.get_next_response_as_protobuf():
         if response.feature_id != 0x02:
@@ -131,6 +141,9 @@ async def get_scan_results(manager: ResponseManager, scan_id: int) -> list[proto
 
     # Send the request
     logger.debug(f"Writing: {results_request.hex(':')}")
+    print("RESULTS REQUEST START")
+    print_packet(results_request)
+    print("RESULTS REQUEST END")
     await manager.client.write_gatt_char(GoProUuid.NETWORK_MANAGEMENT_REQ_UUID.value, results_request, response=True)
     while response := await manager.get_next_response_as_protobuf():
         if response.feature_id != 0x02 or response.action_id != 0x83:

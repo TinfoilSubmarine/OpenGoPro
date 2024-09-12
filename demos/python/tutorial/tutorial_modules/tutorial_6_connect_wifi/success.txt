@@ -1,0 +1,153 @@
+(venv) joel@circadian tutorial_6_connect_wifi $ python3 connect_as_sta.py AndroidShare_9644 f22445hnz2mejy3      main 
+INFO     10:10:21.378 Scanning for bluetooth devices...                                               ble_connect.py:55
+INFO     10:10:26.464    Discovered: GoPro 0286                                                       ble_connect.py:73
+INFO     10:10:26.468    Discovered: 48-9E-BD-7E-75-B0                                                ble_connect.py:73
+INFO     10:10:26.470    Discovered: 2D-17-1F-B7-45-97                                                ble_connect.py:73
+INFO     10:10:26.472    Discovered: OBT08D0E5                                                        ble_connect.py:73
+INFO     10:10:26.475    Discovered: 57-6D-A3-5C-81-7E                                                ble_connect.py:73
+INFO     10:10:26.478    Discovered: Amazfit Bip U                                                    ble_connect.py:73
+INFO     10:10:26.480    Discovered: 6C-07-4B-3D-82-33                                                ble_connect.py:73
+INFO     10:10:26.483    Discovered: MyQ-972                                                          ble_connect.py:73
+INFO     10:10:26.485 Found 1 matching devices.                                                       ble_connect.py:77
+INFO     10:10:26.487 Establishing BLE connection to CC:AF:2F:18:56:3B: GoPro 0286...                 ble_connect.py:82
+INFO     10:10:28.342 BLE Connected!                                                                  ble_connect.py:85
+INFO     10:10:28.346 Attempting to pair...                                                           ble_connect.py:88
+INFO     10:10:28.923 Pairing complete!                                                               ble_connect.py:94
+INFO     10:10:28.926 Enabling notifications...                                                       ble_connect.py:97
+INFO     10:10:28.928 Enabling notification on char b5f90073-aa8d-11e3-9046-0002a5d5c51b             ble_connect.py:101
+INFO     10:10:29.144 Enabling notification on char b5f90079-aa8d-11e3-9046-0002a5d5c51b             ble_connect.py:101
+INFO     10:10:29.235 Enabling notification on char b5f90077-aa8d-11e3-9046-0002a5d5c51b             ble_connect.py:101
+INFO     10:10:29.371 Enabling notification on char b5f90075-aa8d-11e3-9046-0002a5d5c51b             ble_connect.py:101
+INFO     10:10:29.460 Enabling notification on char 00002a19-0000-1000-8000-00805f9b34fb             ble_connect.py:101
+INFO     10:10:29.549 Enabling notification on char b5f90092-aa8d-11e3-9046-0002a5d5c51b             ble_connect.py:101
+INFO     10:10:29.640 Enabling notification on char b5f90083-aa8d-11e3-9046-0002a5d5c51b             ble_connect.py:101
+INFO     10:10:29.730 Enabling notification on char b5f90081-aa8d-11e3-9046-0002a5d5c51b             ble_connect.py:101
+INFO     10:10:29.820 Enabling notification on char b5f90084-aa8d-11e3-9046-0002a5d5c51b             ble_connect.py:101
+INFO     10:10:29.910 Done enabling notifications                                                    ble_connect.py:103
+INFO     10:10:29.912 BLE Connection is ready for communication.                                     ble_connect.py:104
+INFO     10:10:29.914 Scanning for available Wifi Networks                                         connect_as_sta.py:86
+DEBUG    10:10:29.917 Writing: 02:02:02                                                            connect_as_sta.py:98
+START SCAN REQUEST START
+packet = bytearray(b'\x02\x02\x02')
+packet_bytes = 02:02:02
+START SCAN REQUEST END
+DEBUG    10:10:29.999 Received response at GoProUuid.NETWORK_MANAGEMENT_RSP_UUID:              decipher_response.py:161
+         06:02:82:08:01:10:02                                                                                          
+DEBUG    10:10:30.003 self.bytes_remaining=0                                       ble_command_get_hardware_info.py:100
+DEBUG    10:10:36.300 Received response at GoProUuid.NETWORK_MANAGEMENT_RSP_UUID:              decipher_response.py:161
+         0a:02:0b:08:05:10:01:18:08:20:00                                                                              
+DEBUG    10:10:36.303 self.bytes_remaining=0                                       ble_command_get_hardware_info.py:100
+INFO     10:10:36.306 Received scan notification: scanning_state: SCANNING_SUCCESS                connect_as_sta.py:110
+         scan_id: 1                                                                                                    
+         total_entries: 8                                                                                              
+         total_configured_ssid: 0                                                                                      
+                                                                                                                       
+INFO     10:10:36.309 Getting the scanned networks.                                               connect_as_sta.py:131
+DEBUG    10:10:36.312 Writing: 08:02:03:08:00:10:64:18:01                                         connect_as_sta.py:143
+RESULTS REQUEST START
+packet = bytearray(b'\x08\x02\x03\x08\x00\x10d\x18\x01')
+packet_bytes = 08:02:03:08:00:10:64:18:01
+RESULTS REQUEST END
+DEBUG    10:10:36.434 Received response at GoProUuid.NETWORK_MANAGEMENT_RSP_UUID:              decipher_response.py:161
+         20:d9:02:83:08:01:10:01:1a:1a:0a:11:41:6e:64:72:6f:69:64:53                                                   
+DEBUG    10:10:36.438 self.bytes_remaining=199                                     ble_command_get_hardware_info.py:100
+DEBUG    10:10:36.442 Received response at GoProUuid.NETWORK_MANAGEMENT_RSP_UUID:              decipher_response.py:161
+         80:68:61:72:65:5f:39:36:34:34:10:03:20:85:13:28:01:1a:1b:0a                                                   
+DEBUG    10:10:36.446 self.bytes_remaining=180                                     ble_command_get_hardware_info.py:100
+DEBUG    10:10:36.448 Received response at GoProUuid.NETWORK_MANAGEMENT_RSP_UUID:              decipher_response.py:161
+         81:12:43:72:69:73:70:79:47:6f:72:69:6c:6c:61:47:75:65:73:74                                                   
+DEBUG    10:10:36.452 self.bytes_remaining=161                                     ble_command_get_hardware_info.py:100
+DEBUG    10:10:36.454 Received response at GoProUuid.NETWORK_MANAGEMENT_RSP_UUID:              decipher_response.py:161
+         82:10:03:20:99:2d:28:01:1a:16:0a:0d:43:72:69:73:70:79:47:6f                                                   
+DEBUG    10:10:36.458 self.bytes_remaining=142                                     ble_command_get_hardware_info.py:100
+DEBUG    10:10:36.460 Received response at GoProUuid.NETWORK_MANAGEMENT_RSP_UUID:              decipher_response.py:161
+         83:72:69:6c:6c:61:10:03:20:99:2d:28:01:1a:29:0a:20:44:49:52                                                   
+DEBUG    10:10:36.464 self.bytes_remaining=123                                     ble_command_get_hardware_info.py:100
+DEBUG    10:10:36.466 Received response at GoProUuid.NETWORK_MANAGEMENT_RSP_UUID:              decipher_response.py:161
+         84:45:43:54:2d:41:46:2d:48:50:20:44:65:73:6b:4a:65:74:20:32                                                   
+DEBUG    10:10:36.469 self.bytes_remaining=104                                     ble_command_get_hardware_info.py:100
+DEBUG    10:10:36.472 Received response at GoProUuid.NETWORK_MANAGEMENT_RSP_UUID:              decipher_response.py:161
+         85:37:30:30:20:73:65:72:69:65:73:10:03:20:fb:12:28:01:1a:13                                                   
+DEBUG    10:10:36.473 self.bytes_remaining=85                                      ble_command_get_hardware_info.py:100
+DEBUG    10:10:36.479 Received response at GoProUuid.NETWORK_MANAGEMENT_RSP_UUID:              decipher_response.py:161
+         86:0a:0a:43:68:65:72:61:6e:69:73:73:61:10:02:20:ec:12:28:01                                                   
+DEBUG    10:10:36.481 self.bytes_remaining=66                                      ble_command_get_hardware_info.py:100
+DEBUG    10:10:36.482 Received response at GoProUuid.NETWORK_MANAGEMENT_RSP_UUID:              decipher_response.py:161
+         87:1a:16:0a:0d:63:6f:6c:64:77:61:74:65:72:35:67:68:7a:10:01                                                   
+DEBUG    10:10:36.483 self.bytes_remaining=47                                      ble_command_get_hardware_info.py:100
+DEBUG    10:10:36.484 Received response at GoProUuid.NETWORK_MANAGEMENT_RSP_UUID:              decipher_response.py:161
+         88:20:e4:28:28:01:1a:14:0a:0b:78:66:69:6e:69:74:79:77:69:66                                                   
+DEBUG    10:10:36.486 self.bytes_remaining=28                                      ble_command_get_hardware_info.py:100
+DEBUG    10:10:36.487 Received response at GoProUuid.NETWORK_MANAGEMENT_RSP_UUID:              decipher_response.py:161
+         89:69:10:01:20:d0:28:28:00:1a:12:0a:09:48:4f:4d:45:2d:30:32                                                   
+DEBUG    10:10:36.488 self.bytes_remaining=9                                       ble_command_get_hardware_info.py:100
+DEBUG    10:10:36.489 Received response at GoProUuid.NETWORK_MANAGEMENT_RSP_UUID:              decipher_response.py:161
+         8a:38:38:10:01:20:d0:28:28:01                                                                                 
+DEBUG    10:10:36.490 self.bytes_remaining=0                                       ble_command_get_hardware_info.py:100
+INFO     10:10:36.492 Found the following networks:                                               connect_as_sta.py:153
+INFO     10:10:36.493 ssid: "AndroidShare_9644"                                                   connect_as_sta.py:155
+         signal_strength_bars: 3                                                                                       
+         signal_frequency_mhz: 2437                                                                                    
+         scan_entry_flags: 1                                                                                           
+                                                                                                                       
+INFO     10:10:36.494 ssid: "CrispyGorillaGuest"                                                  connect_as_sta.py:155
+         signal_strength_bars: 3                                                                                       
+         signal_frequency_mhz: 5785                                                                                    
+         scan_entry_flags: 1                                                                                           
+                                                                                                                       
+INFO     10:10:36.496 ssid: "CrispyGorilla"                                                       connect_as_sta.py:155
+         signal_strength_bars: 3                                                                                       
+         signal_frequency_mhz: 5785                                                                                    
+         scan_entry_flags: 1                                                                                           
+                                                                                                                       
+INFO     10:10:36.497 ssid: "DIRECT-AF-HP DeskJet 2700 series"                                    connect_as_sta.py:155
+         signal_strength_bars: 3                                                                                       
+         signal_frequency_mhz: 2427                                                                                    
+         scan_entry_flags: 1                                                                                           
+                                                                                                                       
+INFO     10:10:36.499 ssid: "Cheranissa"                                                          connect_as_sta.py:155
+         signal_strength_bars: 2                                                                                       
+         signal_frequency_mhz: 2412                                                                                    
+         scan_entry_flags: 1                                                                                           
+                                                                                                                       
+INFO     10:10:36.500 ssid: "coldwater5ghz"                                                       connect_as_sta.py:155
+         signal_strength_bars: 1                                                                                       
+         signal_frequency_mhz: 5220                                                                                    
+         scan_entry_flags: 1                                                                                           
+                                                                                                                       
+INFO     10:10:36.501 ssid: "xfinitywifi"                                                         connect_as_sta.py:155
+         signal_strength_bars: 1                                                                                       
+         signal_frequency_mhz: 5200                                                                                    
+         scan_entry_flags: 0                                                                                           
+                                                                                                                       
+INFO     10:10:36.503 ssid: "HOME-0288"                                                           connect_as_sta.py:155
+         signal_strength_bars: 1                                                                                       
+         signal_frequency_mhz: 5200                                                                                    
+         scan_entry_flags: 1                                                                                           
+                                                                                                                       
+INFO     10:10:36.504 Connecting to AndroidShare_9644                                             connect_as_sta.py:173
+DEBUG    10:10:36.506 Writing:                                                                    connect_as_sta.py:193
+         02:05:0a:11:41:6e:64:72:6f:69:64:53:68:61:72:65:5f:39:36:34:34:12:0f:66:32:32:34:34:35:6                      
+         8:6e:7a:32:6d:65:6a:79:33                                                                                     
+FRAGMENTED PACKETS START
+packet = b' &\x02\x05\n\x11AndroidShare_9'
+packet_bytes = 20:26:02:05:0a:11:41:6e:64:72:6f:69:64:53:68:61:72:65:5f:39
+FRAGMENTED PACKETS END
+FRAGMENTED PACKETS START
+packet = b'\x80644\x12\x0ff22445hnz2mejy'
+packet_bytes = 80:36:34:34:12:0f:66:32:32:34:34:35:68:6e:7a:32:6d:65:6a:79
+FRAGMENTED PACKETS END
+FRAGMENTED PACKETS START
+packet = b'\x803'
+packet_bytes = 80:33
+FRAGMENTED PACKETS END
+DEBUG    10:10:36.750 Received response at GoProUuid.NETWORK_MANAGEMENT_RSP_UUID:              decipher_response.py:161
+         08:02:85:08:01:10:02:18:14                                                                                    
+DEBUG    10:10:36.754 self.bytes_remaining=0                                       ble_command_get_hardware_info.py:100
+DEBUG    10:10:37.696 Received response at GoProUuid.NETWORK_MANAGEMENT_RSP_UUID:              decipher_response.py:161
+         04:02:0c:08:05                                                                                                
+DEBUG    10:10:37.700 self.bytes_remaining=0                                       ble_command_get_hardware_info.py:100
+INFO     10:10:37.702 Received network provisioning status: provisioning_state:                   connect_as_sta.py:204
+         PROVISIONING_SUCCESS_NEW_AP                                                                                   
+                                                                                                                       
+INFO     10:10:37.704 Successfully connected to AndroidShare_9644                                 connect_as_sta.py:232

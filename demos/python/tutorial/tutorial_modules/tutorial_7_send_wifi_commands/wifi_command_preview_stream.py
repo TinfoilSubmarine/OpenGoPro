@@ -24,7 +24,7 @@ def main() -> None:
     logger.info(f"Response: {json.dumps(response.json(), indent=4)}")
 
     # Build the HTTP GET request
-    url = GOPRO_BASE_URL + "/gopro/camera/stream/start"
+    url = GOPRO_BASE_URL + "/gopro/camera/stream/start?port=8556"
     logger.info(f"Starting the preview stream: sending {url}")
 
     # Send the GET request and retrieve the response
